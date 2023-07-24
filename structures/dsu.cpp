@@ -3,7 +3,8 @@ struct dsu {
     int n;
     vt<int> p, s;
 
-    dsu(int _n) : n(_n) {
+    dsu(int _n) {
+        n = _n;
         p.resize(n);
         iota(all(p), 0);
         s.assign(n, 1);
