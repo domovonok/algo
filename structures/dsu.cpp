@@ -1,13 +1,13 @@
 struct dsu {
 
-    int n;
+    int size;
     vt<int> p, s;
 
-    dsu(int _n) {
-        n = _n;
-        p.resize(n);
+    dsu(int n) {
+        size = n;
+        p.resize(size);
         iota(all(p), 0);
-        s.assign(n, 1);
+        s.assign(size, 1);
     }
 
     inline int leader(int x) {
