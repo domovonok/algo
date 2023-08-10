@@ -3,7 +3,7 @@ struct dsu {
     int size;
     vt<int> p, s;
 
-    void init(int n) {
+    dsu(int n) {
         size = n;
         p.resize(size);
         iota(all(p), 0);
