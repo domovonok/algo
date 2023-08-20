@@ -1,12 +1,12 @@
 struct dsu {
 
     int size;
-    vt<int> p, s;
+    vector<int> p, s;
 
     dsu(int n) {
         size = n;
         p.resize(size);
-        iota(all(p), 0);
+        iota(p.begin(), p.end(), 0);
         s.assign(size, 1);
     }
 
