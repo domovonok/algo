@@ -1,6 +1,6 @@
 template <typename T>
-vt<int> z_function(const T &s, int n) {
-    vt<int> z(n);
+vector<int> z_function(const T &s, int n) {
+    vector<int> z(n);
     for (int i = 1, l = 0, r = 0; i < n; i++) {
         z[i] = (r >= i ? min(z[i - l], r - i + 1) : 0);
         while (z[i] + i < n && s[z[i]] == s[z[i] + i]) {
@@ -15,6 +15,6 @@ vt<int> z_function(const T &s, int n) {
 }
  
 template <typename T>
-vt<int> z_function(const T &s) {
-    return z_function(s, sz(s));
+vector<int> z_function(const T &s) {
+    return z_function(s, s.size());
 }
