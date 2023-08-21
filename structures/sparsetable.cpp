@@ -3,7 +3,7 @@ struct sparsetable {
     int size;
     vector<vector<int>> table;
 
-    SparseTable(const vector<int> &a) {
+    sparsetable(const vector<int> &a) {
         size = a.size();
         int logn = __lg(size) + 1;
         table.resize(logn);
