@@ -1,4 +1,4 @@
-struct SparseTable {
+struct sparsetable {
 
     int size;
     vector<vector<int>> table;
