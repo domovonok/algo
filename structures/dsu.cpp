@@ -1,5 +1,4 @@
 struct dsu {
-
     int size;
     vector<int> p, s;
 
@@ -25,5 +24,4 @@ struct dsu {
         s[a] += s[b];
         return true;
     }
-
 };
