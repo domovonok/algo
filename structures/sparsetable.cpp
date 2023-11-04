@@ -1,5 +1,4 @@
 struct sparsetable {
-
     int size;
     vector<vector<int>> table;
 
@@ -20,5 +19,4 @@ struct sparsetable {
         int logn = __lg(r - l);
         return min(table[logn][l], table[logn][r - (1 << logn)]);
     }
-
 };
