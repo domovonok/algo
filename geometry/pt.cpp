@@ -33,9 +33,14 @@ struct pt {
     }
 };
 
-istream& operator>>(istream& in, pt& p) {
+istream& operator>>(istream& in, pt &p) {
     in >> p.x >> p.y;
     return in;
+}
+
+ostream& operator<<(ostream& out, pt &p) {
+    out << p.x << ' ' << p.y;
+    return out;
 }
 
 ll len2(pt p) {
