@@ -1,52 +1,69 @@
-struct pt {
-    ll x, y;
+template <typename T>
+struct point {
+    T x, y;
 
-    pt() {
+    point() {
         x = 0;
         y = 0;
     }
 
-    pt(ll _x, ll _y) {
+    point(T _x, T _y) {
         x = _x;
         y = _y;
     }
 
-    pt(pt a, pt b) {
+    point(point a, point b) {
         x = b.x - a.x;
         y = b.y - a.y;
     }
 
-    pt operator+(pt other) {
-        return pt(x + other.x, y + other.y);
+    point operator+(point other) {
+        return point(x + other.x, y + other.y);
     }
 
-    pt operator-(pt other) {
-        return pt(x - other.x, y - other.y);
+    point operator-(point other) {
+        return point(x - other.x, y - other.y);
     }
 
-    ll operator*(pt other) {
+    T operator*(point other) {
         return x * other.x + y * other.y;
     }
 
-    ll operator%(pt other) {
+    T operator%(point other) {
         return x * other.y - other.x * y;
     }
 };
 
-istream& operator>>(istream& in, pt &p) {
+template <typename T>
+istream& operator>>(istream& in, point<T> &p) {
     in >> p.x >> p.y;
     return in;
 }
 
-ostream& operator<<(ostream& out, pt &p) {
+template <typename T>
+ostream& operator<<(ostream& out, point<T> &p) {
     out << p.x << ' ' << p.y;
     return out;
 }
 
-ll len2(pt p) {
+template <typename T>
+T len2(point<T> p) {
     return p.x * p.x + p.y * p.y;
 }
 
-ll dist2(pt a, pt b) {
-    return len2(pt(a, b));
+template <typename T>
+T dist2(point<T> a, point<T> b) {
+    return len2(point(a, b));
 }
+
+template <typename T>
+db len(point<T> p) {
+    return sqrt(len2(p));
+}
+
+template <typename T>
+db dist(point<T> a, point<T> b) {
+    return sqrt(dist2(a, b));
+}
+
+using pt = point<ll>;
