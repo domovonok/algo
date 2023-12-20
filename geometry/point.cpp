@@ -53,7 +53,7 @@ T len2(point<T> p) {
 
 template <typename T>
 T dist2(point<T> a, point<T> b) {
-    return len2(point(a, b));
+    return len2(point<T>(a, b));
 }
 
 template <typename T>
