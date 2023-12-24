@@ -7,29 +7,29 @@ struct point {
         y = 0;
     }
 
-    point(T _x, T _y) {
+    point(const T &_x, const T &_y) {
         x = _x;
         y = _y;
     }
 
-    point(point a, point b) {
+    point(const point &a, const point &b) {
         x = b.x - a.x;
         y = b.y - a.y;
     }
 
-    point operator+(point other) {
+    point operator+(const point &other) {
         return point(x + other.x, y + other.y);
     }
 
-    point operator-(point other) {
+    point operator-(const point &other) {
         return point(x - other.x, y - other.y);
     }
 
-    T operator*(point other) {
+    T operator*(const point &other) {
         return x * other.x + y * other.y;
     }
 
-    T operator%(point other) {
+    T operator%(const point &other) {
         return x * other.y - other.x * y;
     }
 };
@@ -47,22 +47,22 @@ ostream& operator<<(ostream& out, point<T> &p) {
 }
 
 template <typename T>
-T len2(point<T> p) {
+T len2(const point<T> &p) {
     return p.x * p.x + p.y * p.y;
 }
 
 template <typename T>
-T dist2(point<T> a, point<T> b) {
+T dist2(const point<T> &a, const point<T> &b) {
     return len2(point<T>(a, b));
 }
 
 template <typename T>
-db len(point<T> p) {
+db len(const point<T> &p) {
     return sqrt(len2(p));
 }
 
 template <typename T>
-db dist(point<T> a, point<T> b) {
+db dist(const point<T> &a, const point<T> &b) {
     return sqrt(dist2(a, b));
 }
 
