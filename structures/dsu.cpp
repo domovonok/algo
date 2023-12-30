@@ -13,7 +13,7 @@ struct dsu {
         return (x == p[x] ? x : p[x] = leader(p[x]));
     }
 
-    bool unite(int a, int b) {
+    bool merge(int a, int b) {
         a = leader(a);
         b = leader(b);
         if (a == b) return false;
@@ -23,5 +23,9 @@ struct dsu {
         p[b] = a;
         s[a] += s[b];
         return true;
+    }
+
+    int sz(int x) {
+        return s[leader(x)];
     }
 };
