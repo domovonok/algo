@@ -56,14 +56,4 @@ T dist2(const point<T> &a, const point<T> &b) {
     return len2(point<T>(a, b));
 }
 
-template <typename T>
-db len(const point<T> &p) {
-    return sqrt(len2(p));
-}
-
-template <typename T>
-db dist(const point<T> &a, const point<T> &b) {
-    return sqrt(dist2(a, b));
-}
-
 using pt = point<ll>;
