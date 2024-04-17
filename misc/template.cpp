@@ -7,6 +7,9 @@ using namespace std;
 #define debug(x...)
 #endif
 
+using ll = long long;
+using db = long double;
+
 void solve() {
     
 }
