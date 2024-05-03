@@ -7,11 +7,11 @@ struct funcDeque {
     deque<pair<T, T>> u, v;
 
     void push_front(T x) {
-        u.emplace_back(x, u.empty() ? x : fn(x, u.back().second));
+        u.emplace_back(x, u.empty() ? x : func(x, u.back().second));
     }
 
     void push_back(T x) {
-        v.emplace_back(x, v.empty() ? x : fn(x, v.back().second));
+        v.emplace_back(x, v.empty() ? x : func(x, v.back().second));
     }
 
     void pop_front() {
@@ -23,13 +23,13 @@ struct funcDeque {
                 v.pop_front();
             }
             for (int i = 1; i < h; i++) {
-                u[i].second = fn(u[i].first, u[i - 1].second);
+                u[i].second = func(u[i].first, u[i - 1].second);
             }
             for (int i = 0; i < (int)v.size(); i++) {
                 if (i == 0) {
                     v[i].second = v[i].first;
                 } else {
-                    v[i].second = fn(v[i].first, v[i - 1].second);
+                    v[i].second = func(v[i].first, v[i - 1].second);
                 }
             }
         }
@@ -45,13 +45,13 @@ struct funcDeque {
                 u.pop_front();
             }
             for (int i = 1; i < h; i++) {
-                v[i].second = fn(v[i].first, v[i - 1].second);
+                v[i].second = func(v[i].first, v[i - 1].second);
             }
             for (int i = 0; i < (int)u.size(); i++) {
                 if (i == 0) {
                     u[i].second = u[i].first;
                 } else {
-                    u[i].second = fn(u[i].first, u[i - 1].second);
+                    u[i].second = func(u[i].first, u[i - 1].second);
                 }
             }
         }
@@ -65,7 +65,7 @@ struct funcDeque {
         } else if (v.empty()) {
             return u.back().second;
         } else {
-            return fn(u.back().second, v.back().second);
+            return func(u.back().second, v.back().second);
         }
     }
 };
