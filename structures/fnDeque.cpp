@@ -1,6 +1,6 @@
 template <typename T>
-struct fnDeque {
-    T fn(T a, T b) {
+struct funcDeque {
+    T func(T a, T b) {
         return max(a, b);
     }
 
