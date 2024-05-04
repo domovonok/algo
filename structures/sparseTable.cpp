@@ -6,7 +6,7 @@ struct sparseTable {
         return min(i, j);
     }
 
-    sparseTable(const vector<int> &a) {
+    void init(const vector<int> &a) {
         size = a.size();
         int logn = __lg(size);
         table.resize(logn + 1);
