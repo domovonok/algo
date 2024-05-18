@@ -6,6 +6,10 @@ struct funcDeque {
 
     deque<pair<T, T>> u, v;
 
+    bool empty() {
+        return u.empty() && v.empty();
+    }
+
     void push_front(T x) {
         u.emplace_back(x, u.empty() ? x : func(x, u.back().second));
     }
@@ -15,7 +19,7 @@ struct funcDeque {
     }
 
     void pop_front() {
-        assert(!u.empty() || !v.empty());
+        assert(!empty());
         if (u.empty()) {
             int h = (v.size() + 1) / 2;
             for (int i = 0; i < h; i++) {
@@ -37,7 +41,7 @@ struct funcDeque {
     }
 
     void pop_back() {
-        assert(!u.empty() || !v.empty());
+        assert(!empty());
         if (v.empty()) {
             int h = (u.size() + 1) / 2;
             for (int i = 0; i < h; i++) {
@@ -59,7 +63,7 @@ struct funcDeque {
     }
 
     T get() {
-        assert(!u.empty() || !v.empty());
+        assert(!empty());
         if (u.empty()) {
             return v.back().second;
         } else if (v.empty()) {
