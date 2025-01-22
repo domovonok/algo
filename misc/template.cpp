@@ -8,9 +8,8 @@ using namespace std;
 #endif
 
 using ll = long long;
-using db = long double;
 
-void solve() {
+void test_case() {
     
 }
 
@@ -24,7 +23,7 @@ signed main() {
     int tests = 1;
     // cin >> tests;
     while (tests--) {
-        solve();
+        test_case();
     }
     return 0;
 }
